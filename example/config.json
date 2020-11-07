@@ -1,0 +1,40 @@
+{
+  "server_port": 8080,
+  "data_file_path": "/tmp/entries.json",
+  "drawing_adapter_type": "DEV",
+  "dashboard": [
+    {
+      "title": "Build",
+      "keys": ["build.status"],
+      "ttl": 0
+    },
+    {
+      "title": "Server 1",
+      "keys": ["server1.pkg-audit", "server1.thermals"],
+      "ttl": 3600
+    },
+    {
+      "title": "Server 2",
+      "keys": ["server2.pkg-audit", "server2.thermals"],
+      "ttl": 3600
+    },
+    {
+      "title": "Network",
+      "keys": ["router.lan", "router.wan", "external.ping"],
+      "ttl": 120
+    },
+    {
+      "title": "Cat Feeder",
+      "keys": ["cat.food", "cat.water"],
+      "ttl": 3600
+    },
+    {
+      "title": "Furnace",
+      "keys": ["furnace.temperature", "furnace.alarm"],
+      "ttl": 300
+    }
+  ]
+}
+
+
+
