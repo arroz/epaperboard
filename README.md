@@ -3,7 +3,9 @@ epaperboard is a Python app to build a dashboard using a Raspberry Pi and an e-p
 use it as is if it suits your needs, or use this project as a starting point to build a dashboard more suitable for
 your use case.
 
-image
+![Photo of dashboard](photo1.png)
+![Photo of dashboard](photo2.png)
+![Photo of dashboard](photo3.png)
 
 Why e-paper? Two main reasons:
 
@@ -41,6 +43,9 @@ keep in mind the Pi with the HAT is bulky, especially due to the headers the HAT
 the driver chip. The one linked above is just deep enough to fit everything inside. I used tape to stick the
 display to the front glass and some spacers to screw the raspberry pi to the back. Finally, a blue poster board
 is covering the glass to block the light from the LEDs inside (the HAT has a "power" LED, and the Pi has another one).
+
+The box has a top slot for collecting postcards. I've installed it upside down, and I'm using the slot to pass the
+USB cable that's powering the Raspberry Pi.
 
 As a side note, the screen is not totally opaque, and at night I can still see a faint red glow from the LED behind
 the screen. If you want to block all light coming from the electronics, you need to cover the back of the screen with
