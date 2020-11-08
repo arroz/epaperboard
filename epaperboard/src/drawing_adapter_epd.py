@@ -9,9 +9,10 @@ import threading
 
 
 class DrawingAdapterEPD(DrawingAdapter):
-    def __init__(self):
+    def __init__(self, vcom: float):
         if has_it8951:
-            self.display = AutoEPDDisplay(vcom=-2.06, spi_hz=24000000)
+            print('Setting up the display using VCOM=' + str(vcom))
+            self.display = AutoEPDDisplay(vcom=vcom, spi_hz=24000000)
             self.display.epd.wait_display_ready()
             self.display.clear()
         else:

@@ -1,5 +1,5 @@
 import json
-from .drawing_adapter_provider import DrawingAdapterType
+from .drawing_adapter_type import DrawingAdapterType
 from .dashboard import Dashboard, DashboardElement
 from .entry import EntryManager
 
@@ -18,6 +18,12 @@ class Config:
     def drawing_adapter_type(self) -> DrawingAdapterType:
         type_name = self.config['drawing_adapter_type']
         return DrawingAdapterType[type_name]
+
+    def has_epd_vcom(self) -> bool:
+        return 'epd_vcom' in self.config
+
+    def epd_vcom(self) -> float:
+        return self.config['epd_vcom']
 
     def dashboard(self, entry_manager: EntryManager) -> Dashboard:
         elements = list(map(lambda element: Config.dashboard_element(element), self.config['dashboard']))

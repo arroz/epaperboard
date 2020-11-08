@@ -14,7 +14,7 @@ def run():
     config = Config(args.config_file_path)
     entry_manager = EntryManager(config.data_file_path())
     dashboard = config.dashboard(entry_manager)
-    adapter = drawing_adapter_for(config.drawing_adapter_type())
+    adapter = drawing_adapter_for(config.drawing_adapter_type(), config)
     drawer = Drawer(adapter, dashboard)
     drawer.draw_full(True)
 
