@@ -102,8 +102,11 @@ run the following:
 sh example/requests.sh
 ```
 
-You should see a bunch of windows showing up as the information on the "screen" changes based on the requests
-you're issuing. This is how you interact with the app: through HTTP requests changing the value of keys that,
+After the requests finish, you should see an image like the following:
+
+[Dashboard screenshot](screenshot.png)
+
+This is how you interact with the app: through HTTP requests changing the value of keys that,
 when composed, define the state of an entry in the screen.
 
 # Configuration
