@@ -184,12 +184,12 @@ request will *always* redraw the screen.
 
 By creating a config file defining what you want to monitor, and writing scripts to issue HTTP requests, you can
 monitor anything! From the most complex server deployments to Arduino boards with WiFi chips, or wireless and USB
-sensors talking to the Pi somehow, your imagination is the limit.
+sensors talking to this or another Raspberry Pi on the same network, your imagination is the limit.
 
 # Security
 
 The built in web server provides no authentication nor SSL. Essentially, anything in your network can talk to it.
-If you need to implement SSL or authentication, you will have to implement those changes yourself.
+If you need SSL or authentication, you will have to implement those changes yourself.
 
 An important note if you want to perform such modifications: one reason I'm using [Bottle](https://bottlepy.org/docs/dev/)
 as a server, aside from its simplicity, is the fact it's single threaded. Although for most uses this would be
@@ -200,8 +200,8 @@ decide to replace the web server, you will need to handle thread-safeness across
 
 # License
 
-This project is distributed under the [MIT License]{https://github.com/arroz/epaperboard/blob/main/LICENSE}, except
-for the bundled fonts which are distributed under the [OFL License]{https://github.com/arroz/epaperboard/blob/main/epaperboard/fonts/OFL.txt}.
+This project is distributed under the [MIT License](https://github.com/arroz/epaperboard/blob/main/LICENSE), except
+for the bundled fonts which are distributed under the [OFL License](https://github.com/arroz/epaperboard/blob/main/epaperboard/fonts/OFL.txt).
 The font license and copyright attribution are included in the OFL.txt file in the fonts directory. It's your
 responsibility to read and understand both licenses and decide if they are valid for your intended usage of this
 software.
