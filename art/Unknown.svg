@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Unknown</title>
+    <defs>
+        <path d="M66.7498449,53.5873951 C68.9107157,44.3624541 74.7745262,37.4696877 84.3412765,32.909096 C98.691402,26.0682085 113.173616,29.6202057 119.262942,32.909096 C125.352269,36.1979863 132.749845,43.6822927 132.749845,53.5873951 C132.340606,62.6640632 130.015262,69.8540929 119.262942,77.2893212 C108.510623,84.7245495 103.388098,88.1178625 99.7498449,94.6877279 C97.3243429,99.0676381 96.3305123,105.171729 96.7683529,113" id="path-1"></path>
+    </defs>
+    <g id="Unknown" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="200" height="200"></rect>
+        <g id="Path-4" stroke-linecap="round">
+            <use stroke="#000000" stroke-width="18" xlink:href="#path-1"></use>
+            <use stroke="#FFFFFF" stroke-width="13" xlink:href="#path-1"></use>
+        </g>
+        <circle id="Oval" stroke="#000000" stroke-width="2.5" cx="96.7498449" cy="136" r="7.75"></circle>
+    </g>
+</svg>

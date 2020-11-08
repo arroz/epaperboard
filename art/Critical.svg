@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Critical</title>
+    <defs>
+        <path d="M80.5960296,27 L120.40397,27 C123.053171,27 125.594117,28.0512213 127.468987,29.922886 L156.065016,58.4700335 C157.944082,60.3458867 159,62.8920182 159,65.5471475 L159,105.183747 C159,107.879669 157.911483,110.461385 155.981275,112.343482 L127.453966,140.159735 C125.586375,141.980775 123.081154,143 120.472691,143 L80.5960296,143 C77.9468289,143 75.4058828,141.948779 73.5310132,140.077114 L45.6673596,112.261091 C43.8292032,110.426076 42.7771262,107.947868 42.7337694,105.350905 L42.0708665,65.6447219 C42.0255782,62.9320701 43.0844146,60.3174391 45.0044567,58.4006791 L73.5310132,29.922886 C75.4058828,28.0512213 77.9468289,27 80.5960296,27 Z" id="path-1"></path>
+    </defs>
+    <g id="Critical" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="200" height="200"></rect>
+        <g id="Path-3">
+            <use stroke="#FFFFFF" stroke-width="9" fill="#000000" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <use stroke="#000000" stroke-width="3" xlink:href="#path-1"></use>
+        </g>
+        <rect id="Rectangle" fill="#FFFFFF" transform="translate(100.000000, 84.500000) rotate(45.000000) translate(-100.000000, -84.500000) " x="98" y="58" width="4" height="53" rx="2"></rect>
+        <rect id="Rectangle" fill="#FFFFFF" transform="translate(100.000000, 84.500000) rotate(-45.000000) translate(-100.000000, -84.500000) " x="98" y="58" width="4" height="53" rx="2"></rect>
+    </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Warning</title>
+    <g id="Warning" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="200" height="200"></rect>
+        <path d="M49.5883332,143 L149.294093,143 C154.816941,143 159.294093,138.522847 159.294093,133 C159.294093,131.351574 158.886589,129.728711 158.107845,128.275829 L107.880131,34.5674082 C105.271043,29.6997078 99.2099093,27.8687402 94.3422089,30.4778276 C92.5872398,31.4184911 91.1530459,32.8616556 90.2233433,34.6224558 L40.745297,128.330877 C38.1666115,133.214751 40.0353361,139.264351 44.9192101,141.843036 C46.3582625,142.602856 47.9610048,143 49.5883332,143 Z" id="Path-2" stroke="#000000" stroke-width="3" fill="#EEEEEE"></path>
+        <circle id="Oval" fill="#000000" cx="99.5" cy="121.5" r="1.5"></circle>
+        <rect id="Rectangle" fill="#000000" x="98" y="54" width="3" height="53" rx="1.5"></rect>
+    </g>
+</svg>
