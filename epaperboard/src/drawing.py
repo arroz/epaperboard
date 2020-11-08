@@ -4,6 +4,9 @@ from abc import ABC, abstractmethod
 import datetime
 import threading
 import subprocess
+from importlib.resources import path
+from .. import images
+from .. import fonts
 
 class DrawingAdapter(ABC):
     def __init__(self, image: Image):
@@ -29,8 +32,8 @@ class Drawer:
         self.text_colors_per_state = [0, 0, 255, 0]
         self.lock = threading.RLock()
         self.previous_states = None
-        self.bold_font = 'fonts/PTSans-Bold.ttf'
-        self.regular_font = 'fonts/PTSans-Regular.ttf'
+        self.bold_font = 'PTSans-Bold.ttf'
+        self.regular_font = 'PTSans-Regular.ttf'
 
     def draw_full(self, force: bool):
         with self.lock:
@@ -56,10 +59,12 @@ class Drawer:
     def draw(self, state_tuple: (DashboardElement, DashboardState), coordinate: (int, int), context: ImageDraw):
         element = state_tuple[0]
         state = state_tuple[1]
-        icon = Image.open("images/" + self.images_per_state[state.state.value]).convert('L')
-        self.drawing_adapter.image.paste(icon, box=coordinate)
-        font = ImageFont.truetype(self.regular_font, 28)
-        self.draw_centered_text((coordinate[0], coordinate[1] + 150), 200, element.title, font, context, 0)
+        with path(images, self.images_per_state[state.state.value]) as imagePath, \
+                path(fonts, self.regular_font) as font_path:
+            icon = Image.open(imagePath).convert('L')
+            self.drawing_adapter.image.paste(icon, box=coordinate)
+            font = ImageFont.truetype(str(font_path), 28)
+            self.draw_centered_text((coordinate[0], coordinate[1] + 150), 200, element.title, font, context, 0)
 
     def draw_centered_text(self, coordinate: (int, int), max_width: int, text: str, font: ImageFont, context: ImageDraw,
                            fill: int):
@@ -76,25 +81,27 @@ class Drawer:
         context.rectangle([(0, 570), (800, 600)], fill=0)
         now = datetime.datetime.now()
         date_text = now.strftime("%b %d, %Y %H:%M:%S")
-        font = ImageFont.truetype(self.bold_font, 20)
-        context.text((5, 570), "Updated on " + date_text, font=font, fill=255)
-        ip_addr = self.ip_address()
-        size = context.textsize(ip_addr, font=font)
-        context.text((800 - size[0] - 5, 570), ip_addr, font=font, fill=255)
+        with path(fonts, self.bold_font) as bold_font_path:
+            font = ImageFont.truetype(str(bold_font_path), 20)
+            context.text((5, 570), "Updated on " + date_text, font=font, fill=255)
+            ip_addr = self.ip_address()
+            size = context.textsize(ip_addr, font=font)
+            context.text((800 - size[0] - 5, 570), ip_addr, font=font, fill=255)
 
     def draw_text_area(self, context: ImageDraw, states: [(DashboardElement, DashboardState)]):
         last_line_y = 410
-        font = ImageFont.truetype(self.regular_font, 16)
-        bold_font = ImageFont.truetype(self.bold_font, 16)
-        for tuple in states:
-            element = tuple[0]
-            state = tuple[1]
-            if len(state.message) > 0:
-                header_size = context.textsize(element.title, font=bold_font)
-                context.text((10, last_line_y), element.title, font=bold_font, fill=0)
-                line = self.crop_line(state.message, font, 800 - header_size[0] - 20, context)
-                context.text((14 + header_size[0], last_line_y), line, font=font, fill=0)
-                last_line_y += header_size[1] + 4
+        with path(fonts, self.regular_font) as font_path, path(fonts, self.bold_font) as bold_font_path:
+            font = ImageFont.truetype(str(font_path), 16)
+            bold_font = ImageFont.truetype(str(bold_font_path), 16)
+            for tuple in states:
+                element = tuple[0]
+                state = tuple[1]
+                if len(state.message) > 0:
+                    header_size = context.textsize(element.title, font=bold_font)
+                    context.text((10, last_line_y), element.title, font=bold_font, fill=0)
+                    line = self.crop_line(state.message, font, 800 - header_size[0] - 20, context)
+                    context.text((14 + header_size[0], last_line_y), line, font=font, fill=0)
+                    last_line_y += header_size[1] + 4
 
     def crop_line(self, text: str, font: ImageFont, space: int, context: ImageDraw) -> str:
         if space <= 0:
